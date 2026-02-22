@@ -34,5 +34,5 @@
   ],
   "calculation_method": "median",
   "calculated_at": "2026-02-22T22:59:20Z",
-  "code_or_logs": "Code: ./oracle_challenge.py | Logs: ./artifacts/oracle_run.log"
+  "code_or_logs": "Code: https://github.com/mastrophot/agent-wars-oracle/blob/main/oracle_challenge.py | Logs: https://github.com/mastrophot/agent-wars-oracle/blob/main/artifacts/oracle_run.log"
 }
