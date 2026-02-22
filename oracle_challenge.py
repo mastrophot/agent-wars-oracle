@@ -31,10 +31,6 @@ def parse_coingecko(payload: Dict[str, Any]) -> float:
     return float(payload["near"]["usd"])
 
 
-def parse_binance(payload: Dict[str, Any]) -> float:
-    return float(payload["price"])
-
-
 def parse_coinbase(payload: Dict[str, Any]) -> float:
     return float(payload["data"]["amount"])
 
@@ -50,21 +46,12 @@ def parse_kraken(payload: Dict[str, Any]) -> float:
     return float(result[first_key]["c"][0])
 
 
-def parse_kucoin(payload: Dict[str, Any]) -> float:
-    code = payload.get("code")
-    if code != "200000":
-        raise ValueError(f"KuCoin non-success code: {code}")
-    return float(payload["data"]["price"])
+def parse_cryptocompare(payload: Dict[str, Any]) -> float:
+    return float(payload["USD"])
 
 
-def parse_okx(payload: Dict[str, Any]) -> float:
-    code = payload.get("code")
-    if code != "0":
-        raise ValueError(f"OKX non-success code: {code}")
-    data = payload.get("data")
-    if not isinstance(data, list) or not data:
-        raise ValueError("OKX payload missing ticker data")
-    return float(data[0]["last"])
+def parse_coinpaprika(payload: Dict[str, Any]) -> float:
+    return float(payload["quotes"]["USD"]["price"])
 
 
 SOURCES: Tuple[Source, ...] = (
@@ -72,11 +59,6 @@ SOURCES: Tuple[Source, ...] = (
         name="coingecko",
         url="https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd",
         parser=parse_coingecko,
-    ),
-    Source(
-        name="binance",
-        url="https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT",
-        parser=parse_binance,
     ),
     Source(
         name="coinbase",
@@ -89,14 +71,19 @@ SOURCES: Tuple[Source, ...] = (
         parser=parse_kraken,
     ),
     Source(
-        name="kucoin",
-        url="https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=NEAR-USDT",
-        parser=parse_kucoin,
+        name="cryptocompare",
+        url="https://min-api.cryptocompare.com/data/price?fsym=NEAR&tsyms=USD",
+        parser=parse_cryptocompare,
     ),
     Source(
-        name="okx",
-        url="https://www.okx.com/api/v5/market/ticker?instId=NEAR-USDT",
-        parser=parse_okx,
+        name="coinpaprika",
+        url="https://api.coinpaprika.com/v1/tickers/near-near-protocol",
+        parser=parse_coinpaprika,
+    ),
+    Source(
+        name="binance",
+        url="https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT",
+        parser=lambda payload: float(payload["price"]),
     ),
 )
 
@@ -246,6 +233,10 @@ def write_json(path: Path, payload: Dict[str, Any]) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    default_code = (
+        "Code: https://github.com/mastrophot/agent-wars-oracle/blob/main/oracle_challenge.py"
+        " | Logs: https://github.com/mastrophot/agent-wars-oracle/blob/main/artifacts/oracle_run.log"
+    )
     parser = argparse.ArgumentParser(
         description="Fetch NEAR/USD from multiple APIs and produce Oracle challenge submission JSON."
     )
@@ -273,7 +264,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--code-or-logs",
-        default="Code: ./oracle_challenge.py | Logs: ./artifacts/oracle_run.log",
+        default=default_code,
         help="Value for submission field code_or_logs.",
     )
     return parser.parse_args()

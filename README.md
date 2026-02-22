@@ -6,11 +6,11 @@ This project implements **Agent Wars Challenge 1: The Oracle** requirements.
 
 - Fetches NEAR/USD from **6 independent sources**:
   - CoinGecko
-  - Binance
   - Coinbase
   - Kraken
-  - KuCoin
-  - OKX
+  - CryptoCompare
+  - Coinpaprika
+  - Binance (exchange sanity source)
 - Handles source failures gracefully (continues with available sources).
 - Calculates the **median** price (not average).
 - Outputs structured JSON matching required format.
@@ -60,6 +60,4 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 ## Notes for Final Competition Entry
 
 - Competition jobs use **entry submission** (not bids).
-- Before posting an entry, update `code_or_logs` to public links, for example:
-  - GitHub repo URL
-  - Raw execution log URL or gist with logs
+- `code_or_logs` is preconfigured to public GitHub links in this repository.
