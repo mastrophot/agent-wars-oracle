@@ -5,12 +5,12 @@ This project implements **Agent Wars Challenge 1: The Oracle** requirements.
 ## What It Does
 
 - Fetches NEAR/USD from **6 independent sources**:
+- Fetches NEAR/USD from **5 independent sources**:
   - CoinGecko
   - Coinbase
   - Kraken
   - CryptoCompare
   - Coinpaprika
-  - Binance (exchange sanity source)
 - Handles source failures gracefully (continues with available sources).
 - Calculates the **median** price (not average).
 - Outputs structured JSON matching required format.

@@ -4,35 +4,30 @@
     {
       "api": "coingecko",
       "price": 1.017,
-      "timestamp": "2026-02-22T23:20:04Z"
+      "timestamp": "2026-02-22T23:22:27Z"
     },
     {
       "api": "coinbase",
-      "price": 1.015,
-      "timestamp": "2026-02-22T23:20:05Z"
+      "price": 1.014,
+      "timestamp": "2026-02-22T23:22:27Z"
     },
     {
       "api": "kraken",
       "price": 1.016,
-      "timestamp": "2026-02-22T23:20:05Z"
+      "timestamp": "2026-02-22T23:22:27Z"
     },
     {
       "api": "cryptocompare",
-      "price": 1.015,
-      "timestamp": "2026-02-22T23:20:05Z"
+      "price": 1.014,
+      "timestamp": "2026-02-22T23:22:27Z"
     },
     {
       "api": "coinpaprika",
       "price": 1.01788,
-      "timestamp": "2026-02-22T23:20:05Z"
-    },
-    {
-      "api": "binance",
-      "price": 1.016,
-      "timestamp": "2026-02-22T23:20:06Z"
+      "timestamp": "2026-02-22T23:22:27Z"
     }
   ],
   "calculation_method": "median",
-  "calculated_at": "2026-02-22T23:20:06Z",
+  "calculated_at": "2026-02-22T23:22:27Z",
   "code_or_logs": "Code: https://github.com/mastrophot/agent-wars-oracle/blob/main/oracle_challenge.py | Logs: https://github.com/mastrophot/agent-wars-oracle/blob/main/artifacts/oracle_run.log"
 }

@@ -34,3 +34,11 @@
 2026-02-23T01:20:06Z INFO api_call_success api=binance status=200 latency_ms=329.55 bytes=42 price=1.01600000 url=https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT
 2026-02-23T01:20:06Z INFO oracle_collection_finished success=6 failed=0
 2026-02-23T01:20:06Z INFO oracle_submission_written output=artifacts/oracle_submission.json median_price_usd=1.016 successful_sources=6
+2026-02-23T01:22:26Z INFO oracle_run_started source_count=5 timeout=12.0
+2026-02-23T01:22:27Z INFO api_call_success api=coingecko status=200 latency_ms=223.75 bytes=22 price=1.01700000 url=https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd
+2026-02-23T01:22:27Z INFO api_call_success api=coinbase status=200 latency_ms=106.25 bytes=58 price=1.01400000 url=https://api.coinbase.com/v2/prices/NEAR-USD/spot
+2026-02-23T01:22:27Z INFO api_call_success api=kraken status=200 latency_ms=276.30 bytes=278 price=1.01600000 url=https://api.kraken.com/0/public/Ticker?pair=NEARUSD
+2026-02-23T01:22:27Z INFO api_call_success api=cryptocompare status=200 latency_ms=183.18 bytes=13 price=1.01400000 url=https://min-api.cryptocompare.com/data/price?fsym=NEAR&tsyms=USD
+2026-02-23T01:22:27Z INFO api_call_success api=coinpaprika status=200 latency_ms=98.84 bytes=711 price=1.01788023 url=https://api.coinpaprika.com/v1/tickers/near-near-protocol
+2026-02-23T01:22:27Z INFO oracle_collection_finished success=5 failed=0
+2026-02-23T01:22:27Z INFO oracle_submission_written output=artifacts/oracle_submission.json median_price_usd=1.016 successful_sources=5

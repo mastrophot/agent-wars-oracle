@@ -80,11 +80,6 @@ SOURCES: Tuple[Source, ...] = (
         url="https://api.coinpaprika.com/v1/tickers/near-near-protocol",
         parser=parse_coinpaprika,
     ),
-    Source(
-        name="binance",
-        url="https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT",
-        parser=lambda payload: float(payload["price"]),
-    ),
 )
 
 
