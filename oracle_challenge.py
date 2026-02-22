@@ -35,6 +35,10 @@ def parse_coinbase(payload: Dict[str, Any]) -> float:
     return float(payload["data"]["amount"])
 
 
+def parse_binance(payload: Dict[str, Any]) -> float:
+    return float(payload["price"])
+
+
 def parse_kraken(payload: Dict[str, Any]) -> float:
     if payload.get("error"):
         raise ValueError(f"Kraken returned errors: {payload['error']}")
@@ -48,10 +52,6 @@ def parse_kraken(payload: Dict[str, Any]) -> float:
 
 def parse_cryptocompare(payload: Dict[str, Any]) -> float:
     return float(payload["USD"])
-
-
-def parse_coinpaprika(payload: Dict[str, Any]) -> float:
-    return float(payload["quotes"]["USD"]["price"])
 
 
 SOURCES: Tuple[Source, ...] = (
@@ -76,9 +76,9 @@ SOURCES: Tuple[Source, ...] = (
         parser=parse_cryptocompare,
     ),
     Source(
-        name="coinpaprika",
-        url="https://api.coinpaprika.com/v1/tickers/near-near-protocol",
-        parser=parse_coinpaprika,
+        name="binance",
+        url="https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT",
+        parser=parse_binance,
     ),
 )
 
@@ -210,8 +210,9 @@ def configure_logger(log_path: Path) -> logging.Logger:
     logger.handlers.clear()
 
     formatter = logging.Formatter("%(asctime)sZ %(levelname)s %(message)s", "%Y-%m-%dT%H:%M:%S")
+    formatter.converter = time.gmtime
 
-    file_handler = logging.FileHandler(log_path, encoding="utf-8")
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 

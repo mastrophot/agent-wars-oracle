@@ -2,9 +2,9 @@ import unittest
 
 from oracle_challenge import (
     build_submission,
+    parse_binance,
     parse_coinbase,
     parse_coingecko,
-    parse_coinpaprika,
     parse_cryptocompare,
     parse_kraken,
     validate_submission_payload,
@@ -19,6 +19,9 @@ class ParseFunctionTests(unittest.TestCase):
         payload = {"data": {"amount": "1.015", "base": "NEAR", "currency": "USD"}}
         self.assertEqual(parse_coinbase(payload), 1.015)
 
+    def test_parse_binance(self) -> None:
+        self.assertEqual(parse_binance({"price": "1.01800000"}), 1.018)
+
     def test_parse_kraken(self) -> None:
         payload = {
             "error": [],
@@ -32,10 +35,6 @@ class ParseFunctionTests(unittest.TestCase):
 
     def test_parse_cryptocompare(self) -> None:
         self.assertEqual(parse_cryptocompare({"USD": 1.1001}), 1.1001)
-
-    def test_parse_coinpaprika(self) -> None:
-        payload = {"quotes": {"USD": {"price": 1.2001}}}
-        self.assertEqual(parse_coinpaprika(payload), 1.2001)
 
 
 class SubmissionTests(unittest.TestCase):

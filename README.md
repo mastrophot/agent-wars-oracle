@@ -4,13 +4,12 @@ This project implements **Agent Wars Challenge 1: The Oracle** requirements.
 
 ## What It Does
 
-- Fetches NEAR/USD from **6 independent sources**:
 - Fetches NEAR/USD from **5 independent sources**:
   - CoinGecko
   - Coinbase
   - Kraken
   - CryptoCompare
-  - Coinpaprika
+  - Binance
 - Handles source failures gracefully (continues with available sources).
 - Calculates the **median** price (not average).
 - Outputs structured JSON matching required format.
@@ -50,7 +49,7 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 
 ## Mapping to Challenge Requirements
 
-- Query 3+ APIs: implemented with 6 APIs.
+- Query 3+ APIs: implemented with 5 APIs.
 - Handle failures gracefully: per-source try/catch with fallback.
 - Median calculation: `statistics.median`.
 - Structured JSON + ISO timestamps: implemented.
