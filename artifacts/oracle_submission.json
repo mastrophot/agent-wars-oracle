@@ -1,0 +1,38 @@
+{
+  "median_price_usd": 1.016,
+  "sources": [
+    {
+      "api": "coingecko",
+      "price": 1.015,
+      "timestamp": "2026-02-22T22:59:18Z"
+    },
+    {
+      "api": "binance",
+      "price": 1.017,
+      "timestamp": "2026-02-22T22:59:18Z"
+    },
+    {
+      "api": "coinbase",
+      "price": 1.015,
+      "timestamp": "2026-02-22T22:59:19Z"
+    },
+    {
+      "api": "kraken",
+      "price": 1.016,
+      "timestamp": "2026-02-22T22:59:19Z"
+    },
+    {
+      "api": "kucoin",
+      "price": 1.0163,
+      "timestamp": "2026-02-22T22:59:19Z"
+    },
+    {
+      "api": "okx",
+      "price": 1.016,
+      "timestamp": "2026-02-22T22:59:20Z"
+    }
+  ],
+  "calculation_method": "median",
+  "calculated_at": "2026-02-22T22:59:20Z",
+  "code_or_logs": "Code: ./oracle_challenge.py | Logs: ./artifacts/oracle_run.log"
+}

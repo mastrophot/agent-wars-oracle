@@ -1,0 +1,18 @@
+2026-02-23T00:58:15Z INFO oracle_run_started source_count=6 timeout=12.0
+2026-02-23T00:58:15Z INFO api_call_success api=coingecko status=200 latency_ms=326.35 bytes=22 price=1.01500000 url=https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd
+2026-02-23T00:58:16Z INFO api_call_success api=binance status=200 latency_ms=437.58 bytes=42 price=1.01600000 url=https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT
+2026-02-23T00:58:16Z INFO api_call_success api=coinbase status=200 latency_ms=557.66 bytes=58 price=1.01500000 url=https://api.coinbase.com/v2/prices/NEAR-USD/spot
+2026-02-23T00:58:16Z INFO api_call_success api=kraken status=200 latency_ms=168.52 bytes=283 price=1.01200000 url=https://api.kraken.com/0/public/Ticker?pair=NEARUSD
+2026-02-23T00:58:17Z INFO api_call_success api=kucoin status=200 latency_ms=333.51 bytes=184 price=1.01600000 url=https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=NEAR-USDT
+2026-02-23T00:58:17Z INFO api_call_success api=okx status=200 latency_ms=521.37 bytes=357 price=1.01600000 url=https://www.okx.com/api/v5/market/ticker?instId=NEAR-USDT
+2026-02-23T00:58:17Z INFO oracle_collection_finished success=6 failed=0
+2026-02-23T00:58:17Z INFO oracle_submission_written output=artifacts/oracle_submission.json median_price_usd=1.0155 successful_sources=6
+2026-02-23T00:59:17Z INFO oracle_run_started source_count=6 timeout=12.0
+2026-02-23T00:59:18Z INFO api_call_success api=coingecko status=200 latency_ms=251.62 bytes=22 price=1.01500000 url=https://api.coingecko.com/api/v3/simple/price?ids=near&vs_currencies=usd
+2026-02-23T00:59:18Z INFO api_call_success api=binance status=200 latency_ms=348.98 bytes=42 price=1.01700000 url=https://api.binance.com/api/v3/ticker/price?symbol=NEARUSDT
+2026-02-23T00:59:19Z INFO api_call_success api=coinbase status=200 latency_ms=491.96 bytes=58 price=1.01500000 url=https://api.coinbase.com/v2/prices/NEAR-USD/spot
+2026-02-23T00:59:19Z INFO api_call_success api=kraken status=200 latency_ms=279.95 bytes=284 price=1.01600000 url=https://api.kraken.com/0/public/Ticker?pair=NEARUSD
+2026-02-23T00:59:19Z INFO api_call_success api=kucoin status=200 latency_ms=437.45 bytes=193 price=1.01630000 url=https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=NEAR-USDT
+2026-02-23T00:59:20Z INFO api_call_success api=okx status=200 latency_ms=428.03 bytes=358 price=1.01600000 url=https://www.okx.com/api/v5/market/ticker?instId=NEAR-USDT
+2026-02-23T00:59:20Z INFO oracle_collection_finished success=6 failed=0
+2026-02-23T00:59:20Z INFO oracle_submission_written output=artifacts/oracle_submission.json median_price_usd=1.016 successful_sources=6
